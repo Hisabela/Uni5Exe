@@ -1,0 +1,16 @@
+public class Uni5Exe2 {
+
+    public static void main(String[] args) {
+       
+        int soma=0;
+        for (int par = 0; par <= 100; par+=2) {
+            for (int s = 0; s <= 100; s+=2) {
+              soma = par+s;
+
+            }
+        }
+        System.out.println(soma);
+
+    }
+
+}
