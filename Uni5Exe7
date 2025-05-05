@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Uni5Exe7 {
+public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.print("Digite o número de elementos: ");
+        int n = teclado.nextInt();
+        
+        System.out.print("Digite o número 1: ");
+        double numero = teclado.nextDouble();
+        
+        double maior = numero, menor = numero;
+
+        for (int i = 2; i <= n; i++) {
+            System.out.print("Digite o número " + i + ": ");
+            numero = teclado.nextDouble();
+            
+            if (numero > maior) maior = numero;
+            if (numero < menor) menor = numero;
+        }
+
+        System.out.printf("Maior número: %.2f\n", maior);
+        System.out.printf("Menor número: %.2f\n", menor);
+
+        teclado.close();
+    }
+
+}
