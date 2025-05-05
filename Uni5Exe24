@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Uni5Exe24 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        double limiteDiario = teclado.nextDouble();
+        double pesoTotal = 0;
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.print("Peso do peixe (gramas): ");
+            double pesoPeixe = teclado.nextDouble();
+
+            if (pesoTotal + pesoPeixe > limiteDiario) {
+                System.out.println("Limite diário excedido.");
+                break;
+            }
+
+            pesoTotal += pesoPeixe;
+
+            System.out.print("Deseja informar o peso de mais um peixe? (s/n): ");
+            char resposta = teclado.next().charAt(0);
+            if (resposta == 'n') {
+                continuar = false;
+            }
+        }
+
+        System.out.println("Peso total da pesca: " + pesoTotal + " gramas");
+    }
+}
