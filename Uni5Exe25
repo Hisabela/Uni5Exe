@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Uni5Exe25 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int contador = 0;
+        double somaSalarios = 0;
+
+        while (true) {
+            System.out.print("Digite o salário do funcionário (ou 0 para sair): R$ ");
+            double salario = teclado.nextDouble();
+            
+            if (salario == 0) {
+                break;
+            }
+
+            somaSalarios += salario;
+            contador++;
+        }
+
+        if (contador > 0) {
+            double mediaSalario = somaSalarios / contador;
+            System.out.println("A média salarial dos funcionários é: R$ " + mediaSalario);
+        } else {
+            System.out.println("Nenhum salário foi informado.");
+        }
+    }
+}
