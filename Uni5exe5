@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Uni5exe5 {
+ public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int n;
+
+        do {
+            System.out.print("Digite um valor para n (maior que 2): ");
+            n = teclado.nextInt();
+        } while (n <= 2);
+
+        int expoente = 3;
+
+        for (int i = 1; i <= n; i++) {
+            int termo;
+
+            if (i % 2 != 0) {
+                termo = (int) Math.pow(2, expoente);
+            } else {
+                termo = (int) Math.pow(2, expoente) + 2;
+                expoente++;
+            }
+
+            System.out.print(termo + " ");
+        }
+
+    }
+}
