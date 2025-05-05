@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Uni5Exe17 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double maiorAltura = 0, menorAltura = Double.MAX_VALUE;
+        int maiorInscricao = 0, menorInscricao = 0;
+        double somaAltura = 0;
+        int count = 0;
+
+        while (true) {
+            System.out.print("Nº de inscrição: ");
+            int inscricao = teclado.nextInt();
+            if (inscricao == 0) break;
+
+            System.out.print("Altura: ");
+            double altura = teclado.nextDouble();
+            teclado.nextLine();  // Consume newline
+
+            somaAltura += altura;
+            count++;
+
+            if (altura > maiorAltura) {
+                maiorAltura = altura;
+                maiorInscricao = inscricao;
+            }
+            if (altura < menorAltura) {
+                menorAltura = altura;
+                menorInscricao = inscricao;
+            }
+        }
+
+        double mediaAltura = somaAltura / count;
+        System.out.println("O atleta mais baixo tem " + menorAltura + "m e o seu número de inscrição é " + menorInscricao);
+        System.out.println("O atleta mais alto tem " + maiorAltura + "m e o seu número de inscrição é " + maiorInscricao);
+        System.out.println("A altura média do grupo de atletas é: " + mediaAltura);
+    }
+}
