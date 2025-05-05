@@ -1,0 +1,32 @@
+public class Uni5Exe9 {
+   public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Digite o número de alunos: ");
+        int n = teclado.nextInt();
+
+        String nomes18 = "";
+        int quantidadeAcima20 = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Nome do aluno " + i + ": ");
+            String nome = teclado.next();
+            
+            System.out.print("Idade do aluno " + i + ": ");
+            int idade = teclado.nextInt();
+
+            if (idade == 18) {
+                nomes18 += nome + " ";
+            }
+            if (idade > 20) {
+                quantidadeAcima20++;
+            }
+        }
+
+        System.out.println("Nomes dos alunos que tem 18 anos: " + nomes18.trim());
+        System.out.println("Quantidade de alunos que tem idade acima de 20 anos: " + quantidadeAcima20);
+
+        teclado.close();
+    }
+
+}
