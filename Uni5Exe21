@@ -1,0 +1,15 @@
+public class Uni5Exe21 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int chicoAltura = 150, zeAltura = 110;
+        int anos = 0;
+
+        while (zeAltura <= chicoAltura) {
+            chicoAltura += 2;
+            zeAltura += 3;
+            anos++;
+        }
+
+        System.out.println("Zé será maior que Chico em " + anos + " anos");
+    }
+}
