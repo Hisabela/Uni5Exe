@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Uni5Exe16 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        double somaAlturaMulheres = 0, somaAlturaGrupo = 0;
+        int countMulheres = 0, countGrupo = 0;
+        
+        while (true) {
+            System.out.print("Altura: ");
+            double altura = teclado.nextDouble();
+            if (altura == 0) break;
+            
+            System.out.print("Genero (M/F/O): ");
+            char genero = teclado.next().charAt(0);
+            teclado.nextLine();  // Consume newline
+
+            somaAlturaGrupo += altura;
+            countGrupo++;
+
+            if (genero == 'F' || genero == 'f') {
+                somaAlturaMulheres += altura;
+                countMulheres++;
+            }
+        }
+        
+        double mediaAlturaMulheres = countMulheres > 0 ? somaAlturaMulheres / countMulheres : 0;
+        double mediaAlturaGrupo = somaAlturaGrupo / countGrupo;
+        
+        System.out.println("A média da altura das mulheres é: " + mediaAlturaMulheres);
+        System.out.println("A média de altura do grupo é: " + mediaAlturaGrupo);
+    }
+}
