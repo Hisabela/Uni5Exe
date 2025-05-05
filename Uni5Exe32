@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Uni5Exe32 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int contador = 0
+       int somaIdades = 0;
+
+        while (true) {
+            System.out.print("Digite a idade (ou 0 para sair): ");
+            int idade = teclado.nextInt();
+            
+            if (idade == 0) {
+                break;
+            }
+
+            somaIdades += idade;
+            contador++;
+        }
+
+        if (contador > 0) {
+            double mediaIdade = somaIdades / contador;
+            System.out.println("A média das idades é: " + mediaIdade);
+        } else {
+            System.out.println("Nenhuma idade foi informada.");
+        }
+    }
+}
