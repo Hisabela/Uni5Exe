@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Uni5Exe26 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int contador = 0;
+        double maiorSalario = 0;
+
+        while (true) {
+            System.out.print("Digite o salário do funcionário (ou 0 para sair): R$ ");
+            double salario = teclado.nextDouble();
+            
+            if (salario == 0) {
+                break;
+            }
+
+            if (salario > maiorSalario) {
+                maiorSalario = salario;
+            }
+            
+            contador++;
+        }
+
+        if (contador > 0) {
+            System.out.println("O maior salário informado foi: R$ " + maiorSalario);
+        } else {
+            System.out.println("Nenhum salário foi informado.");
+        }
+    }
+}
