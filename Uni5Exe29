@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Uni5Exe29 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int contadorPar = 0, contadorImpar = 0;
+
+        while (true) {
+            System.out.print("Digite um número (ou 0 para sair): ");
+            int numero = teclado.nextInt();
+            
+            if (numero == 0) {
+                break;
+            }
+
+            if (numero % 2 == 0) {
+                contadorPar++;
+            } else {
+                contadorImpar++;
+            }
+        }
+
+        System.out.println("Total de números pares: " + contadorPar);
+        System.out.println("Total de números ímpares: " + contadorImpar);
+    }
+}
