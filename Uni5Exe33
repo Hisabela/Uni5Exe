@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Uni5Exe33 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int contador = 0;
+        double somaNotas = 0;
+        double nota;
+
+        do {
+            System.out.print("Digite a nota do aluno (ou 0 para sair): ");
+            nota = teclado.nextDouble();
+
+            if (nota != 0) {
+                somaNotas += nota;
+                contador++;
+            }
+        } while (nota != 0);
+
+        if (contador > 0) {
+            double mediaNotas = somaNotas / contador;
+            System.out.println("A média das notas é: " + mediaNotas);
+        } else {
+            System.out.println("Nenhuma nota foi informada.");
+        }
+    }
+}
