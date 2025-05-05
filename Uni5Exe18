@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Uni5Exe18 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int totalPessoas = 0, canal4 = 0, canal5 = 0, canal9 = 0, canal12 = 0;
+
+        while (true) {
+            System.out.print("Canal: ");
+            int canal = teclado.nextInt();
+            if (canal == 0) break;
+
+            System.out.print("Pessoas assistindo: ");
+            int pessoas = teclado.nextInt();
+            teclado.nextLine();  // Consume newline
+
+            totalPessoas += pessoas;
+
+            switch (canal) {
+                case 4: canal4 += pessoas; break;
+                case 5: canal5 += pessoas; break;
+                case 9: canal9 += pessoas; break;
+                case 12: canal12 += pessoas; break;
+            }
+        }
+
+        System.out.println("Percentual de audiência do canal 4: " + (canal4 * 100.0 / totalPessoas) + "%");
+        System.out.println("Percentual de audiência do canal 5: " + (canal5 * 100.0 / totalPessoas) + "%");
+        System.out.println("Percentual de audiência do canal 9: " + (canal9 * 100.0 / totalPessoas) + "%");
+        System.out.println("Percentual de audiência do canal 12: " + (canal12 * 100.0 / totalPessoas) + "%");
+    }
+}
