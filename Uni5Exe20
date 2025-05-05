@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Uni5Exe20 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Massa inicial (Kg): ");
+        double massaInicial = teclado.nextDouble();
+        double massa = massaInicial;
+        int tempo = 0;
+
+        while (massa > 0.0005) {
+            massa /= 2;
+            tempo += 50;
+        }
+
+        System.out.println("Massa inicial: " + massaInicial + "Kg");
+        System.out.println("Massa final: " + massa + "Kg");
+        System.out.println("Tempo necessário: " + tempo + " segundos");
+    }
+}
