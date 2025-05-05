@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Uni5Exe8 {
+ public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        // Leitura do valor de n
+        System.out.print("Digite o número de elementos: ");
+        int n = teclado.nextInt();
+
+        int menorNegativo = 0;
+        int somaPositivos = 0;
+        int quantidadePositivos = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Digite o número " + i + ": ");
+            int numero = teclado.nextInt();
+
+            if (numero < 0) {
+                if (menorNegativo == 0 || numero < menorNegativo) {
+                    menorNegativo = numero;
+                }
+            } else if (numero > 0) {
+                somaPositivos += numero;
+                quantidadePositivos++;
+            }
+        }
+
+        if (menorNegativo < 0) {
+            System.out.println("Menor valor negativo: " + menorNegativo);
+        }
+
+        if (quantidadePositivos > 0) {
+            double mediaPositivos = (double) somaPositivos / quantidadePositivos;
+            System.out.printf("Média dos números positivos: %.2f\n", mediaPositivos);
+        }
+
+    }
+}
