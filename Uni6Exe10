@@ -42,23 +42,29 @@ public class Uni6Exe10 {
 
                 case 4:
 
-                    excluirValor(vet, teclado);
+                    excluirValor(vet, teclado, posicao);
 
                     break;
 
                 case 5:
 
+                    mostrarValor(vet, teclado, posicao);
+
                     break;
 
                 case 6:
+
 
                     break;
 
                 case 7:
 
+                    inverterValor(vet, posicao, teclado);
+
                     break;
 
                 case 8:
+
 
                     break;
 
@@ -67,9 +73,32 @@ public class Uni6Exe10 {
 
     }
 
-    private void excluirValor(int[] vet, Scanner teclado) {
-              
-        
+    private void inverterValor(int[] vet, int posicao, Scanner teclado) {
+        int temp = 0;
+        int posFim = 0;
+        for (int i = 0; i < posFim; i++) {
+            for (int j = 0; j < i; j++) {
+                temp = vet[i];
+                vet[i] = vet[j];
+                vet[j] = temp;
+            }
+        }
+
+    }
+
+    private void mostrarValor(int[] vet, Scanner teclado, int posicao) {
+        for (int i = 0; i < posicao; i++) {
+            System.out.println(vet[i]);
+        }
+    }
+
+    private void excluirValor(int[] vet, Scanner teclado, int posicao) {
+        int indice = pesquisarValor(vet, teclado);
+        if (indice >= 0) {
+            for (int i = indice; i < (posicao - 1); i++) {
+                vet[i] = vet[i + 1];
+            }
+        }
 
     }
 
@@ -121,3 +150,4 @@ public class Uni6Exe10 {
 
     }
 }
+
