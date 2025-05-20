@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Uni5Exe13 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Informe o número total de reabastecimentos: ");
+        int totalParadas = sc.nextInt();
+
+        double somaKmPorLitro = 0;
+
+        for (int i = 1; i <= totalParadas; i++) {
+            System.out.print("Parada " + i + " - Quilometragem (km): ");
+            double km = sc.nextDouble();
+            System.out.print("Parada " + i + " - Combustível (litros): ");
+            double litros = sc.nextDouble();
+
+            double kmPorLitro = km / litros;
+            System.out.printf("Parada %d: %.2f km por litro\n", i, kmPorLitro);
+
+            somaKmPorLitro += kmPorLitro;
+        }
+
+        double media = somaKmPorLitro / totalParadas;
+        System.out.printf("Quilometragem média obtida por litro: %.2f\n", media);
+
+        sc.close();
+    }
+}
